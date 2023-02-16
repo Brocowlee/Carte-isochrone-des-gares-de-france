@@ -1,6 +1,20 @@
-# Rapport d'analyse de données
+# Création d'une carte isochrone des gares de France
+Ce projet consiste à créer une carte isochrone des gares de France, en affichant les zones accessibles pour différents temps de trajet à partir d'une gare de référence. Les cercles bleus représentent les endroits accessibles pour 1 heure de trajet, les cercles verts pour 2 heures de trajet et les cercles rouges pour 3 heures de trajet. Les points bleus sont les emplacements des gares actuellement dans une ville et les points verts sont les emplacements des gares avec le décalage en fonction du temps que nous permet de visualiser la carte isochrone.
 
-Ce rapport présente une analyse de données concernant les temps de trajet entre différentes villes en France, ainsi que la génération d'un dictionnaire réduisant les vecteurs de ces trajets à une échelle donnée.
+## Pré-requis
+Avant de lancer le programme, assurez-vous que les bibliothèques Python suivantes sont installées :
+
+- `requests`
+- `pandas`
+- `numpy`
+- `geopandas`
+- `matplotlib`
+- `folium`
+- `shapely`
+
+```Shell
+pip install requests pandas numpy geopandas matplotlib folium shapely
+```
 
 ## Préparation des données
 
@@ -23,6 +37,24 @@ La fonction `reduction_vect_trajet` a été créée pour réduire les vecteurs d
 
 La fonction `generate_reducted_dico` a été utilisée pour créer un dictionnaire réduisant tous les vecteurs de trajet à une échelle donnée par rapport à une ville de référence donnée. Cette fonction prend en entrée l'échelle de réduction et le nom de la ville de référence, et utilise la fonction `reduction_vect_trajet` pour calculer les vecteurs de trajet réduits pour toutes les autres villes.
 
-## Conclusion
+## Création d'une carte isochrone
 
-Ce rapport a présenté une analyse de données concernant les temps de trajet entre différentes villes en France, ainsi que la génération d'un dictionnaire réduisant les vecteurs de ces trajets à une échelle donnée. Ces résultats pourraient être utilisés pour visualiser les déplacements entre différentes villes en France à différentes échelles, ou pour créer des modèles prédictifs de temps de trajet entre différentes villes.
+
+Le code permet de créer une carte isochrone des gares de France. La carte est divisée en cercles concentriques, chacun représentant un temps de trajet maximal à partir d'un point de référence (une ville). Les cercles sont colorés en bleu, vert et rouge pour représenter les endroits accessibles respectivement en 1, 2 et 3 heures de trajet, et au-delà du cercle rouge, le temps de trajet est supérieur à 3 heures.
+
+Les villes actuelles sont représentées par des points bleus sur la carte, tandis que les gares sont représentées par des points verts décalés en fonction du temps de trajet.
+
+Le code effectue les étapes suivantes pour créer la carte :
+
+1. Il récupère les coordonnées de chaque ville et de chaque gare à partir d'un fichier CSV.
+2. Il calcule les distances de chaque gare à la ville de référence et les décale en fonction de leur temps de trajet, en utilisant une formule basée sur la vitesse moyenne des trains.
+3. Il utilise la bibliothèque `shapely` pour créer une forme géométrique polygonale à partir des coordonnées des gares décalées. Cette forme géométrique représente l'ensemble des points accessibles en fonction du temps de trajet.
+4. Il utilise la bibliothèque `geopandas` pour créer un objet géographique à partir de la forme géométrique polygonale, et enregistre cet objet dans un fichier `GeoJSON`, `GPKG` et `Shapefile`.
+5. Il utilise la bibliothèque `folium` pour créer une carte interactive. Il ajoute des cercles bleu, vert et rouge pour représenter les endroits accessibles en fonction du temps de trajet, ainsi que des marqueurs pour chaque ville et chaque gare, et relie les villes et les gares par des lignes rouges.
+6. Il affiche la carte interactive dans la console et enregistre la carte sous forme de fichier HTML.
+
+En conclusion, le code calcule les temps de trajet entre les gares et les villes, puis crée une carte interactive qui représente graphiquement les zones accessibles en fonction du temps de trajet.
+# Paris
+![](img.png)
+# Lyon
+![](img_1.png)
