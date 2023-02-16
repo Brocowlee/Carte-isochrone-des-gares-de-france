@@ -54,5 +54,7 @@ Le code effectue les étapes suivantes pour créer la carte :
 6. Il affiche la carte interactive dans la console et enregistre la carte sous forme de fichier HTML.
 
 En conclusion, le code calcule les temps de trajet entre les gares et les villes, puis crée une carte interactive qui représente graphiquement les zones accessibles en fonction du temps de trajet.
-
-<iframe src="run/map.html" height="500" width="100%"></iframe>
+# Paris
+![](img.png)
+# Lyon
+![](img_1.png)
