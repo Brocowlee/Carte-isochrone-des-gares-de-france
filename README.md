@@ -1,9 +1,9 @@
 # Création d'une carte isochrone des gares de France
 
-##Contexte de ce projet
+## Contexte de ce projet
 Ce projet a été réalisé par moi-même (Arthur Gonay) et Rami Bougahami lors d'un hackathon organisé par l'entreprise Datalyo, interne à notre école Polytech Annecy-Chambéry. L'objectif était de réaliser des visualisations pertinentes à partir des données de la SNCF en seulement 8 heures.
 
-##Introduction
+## Introduction
 Ce projet consiste à créer une carte isochrone des gares de France, en affichant les zones accessibles pour différents temps de trajet à partir d'une gare de référence. Les cercles bleus représentent les endroits accessibles pour 1 heure de trajet, les cercles verts pour 2 heures de trajet et les cercles rouges pour 3 heures de trajet. Les points bleus sont les emplacements des gares actuellement dans une ville et les points verts sont les emplacements des gares avec le décalage en fonction du temps que nous permet de visualiser la carte isochrone.
 
 ## Pré-requis
