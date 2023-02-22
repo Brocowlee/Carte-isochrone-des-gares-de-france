@@ -1,6 +1,6 @@
 # Création d'une carte isochrone des gares de France
 
-## Contexte du projet
+## Contexte
 Ce projet a été réalisé par moi-même (Arthur Gonay) et Rami Bougahami lors d'un hackathon organisé par l'entreprise Datalyo, interne à notre école Polytech Annecy-Chambéry. L'objectif était de réaliser des visualisations pertinentes à partir des données de la SNCF en seulement 8 heures.
 
 ## Introduction
